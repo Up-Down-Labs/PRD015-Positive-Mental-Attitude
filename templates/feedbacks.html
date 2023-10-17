@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+<div class="inner">
+    <a class="navbar-brand pull-left">Beta
+      <img class="pull-left" src="{{ url_for('static', filename='images/bootstrap-solid.svg')}}" width="30" height="30" alt="">
+    </a>
+    <nav class="nav nav-masthead justify-content-center">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/user/add">Submit Form</a>
+      <a class="nav-link active" href="/feedbacks">Feedbacks</a>
+    </nav>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+{% for feedback in feedbacks %}
+
+<div class="shadow p-3 mb-5 bg-body rounded">
+{{feedback.name }}</br/>
+{{feedback.email }}<br/>
+{{feedback.type }}<br/>
+{{feedback.feed }}<br/>
+<hr/>
+</div>
+
+{% endfor %}
+
+{% endblock %}
