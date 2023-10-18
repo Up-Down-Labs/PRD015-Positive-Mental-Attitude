@@ -16,7 +16,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 
 # Add MySQL Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Bitrux&777@localhost/users'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost/users'
 # Secret Key
 app.config['SECRET_KEY'] = "NonProductionWeb"
 # Initialize Database
