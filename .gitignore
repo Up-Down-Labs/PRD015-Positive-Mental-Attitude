@@ -1,3 +1,8 @@
 virt/
 __pycache__/
-migrations/
+requirements.txt
+migrations/__pycache__
+migrations/alembic.ini
+migrations/env.py
+migrations/README
+migrations/script.py.mako
